@@ -1,14 +1,30 @@
 import React from "react";
+import "./Beast.css"
+import Card from 'react-bootstrap/Card';
 
 
 class Beast extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      favorites: 0
+    }
+  }
+
+  handleClick = () => {
+    this.setState({
+      favorites: this.state.favorites + 1
+    })
+  } 
+
   render(){
     return (
-      <article>
-        <h2>Animal: {this.props.title}</h2>
-        <img src={this.props.imgUrl} alt={this.props.alt} title={this.props.title}></img>
-        <p>{this.props.description}</p>
-      </article>
+      <Card style={{ width: '18rem' }}>
+        <Card.Title>Animal: {this.props.title}</Card.Title>
+        <Card.Text>Favorites ❤️: {this.state.favorites}</Card.Text>
+        <img src={this.props.image_url} alt={this.props.keyword} title={this.props.title} onClick={this.handleClick} ></img>
+        <Card.Text>{this.props.description}</Card.Text>
+      </Card>
     )
   }
 }

@@ -1,14 +1,16 @@
 import React from "react";
 import Beast from "./Beast";
+import data from "./data/data.json"
+import "./Main.css"
 
 class Main extends React.Component {
   render(){
     return (
-      <>
-      <h2>Beasts</h2>
-      <Beast title="Goat" imgUrl="/Baby-Goat.jpg" alt="Cute Baby Goat" description="Enjoy This Chill Goat Relaxing"/>
-      <Beast title="Ram" imgUrl="/Ram.jpg" alt="Stoic Ram" description="Enjoy This Picture of a Powerful Ram" />
-      </>
+      <main>
+      {data.map((beast, index) => {
+        return <Beast image_url={beast.image_url} title={beast.title} description={beast.description} keyword={beast.keyword} key={index}/>
+      })}
+      </main>
     )
   }
 }
