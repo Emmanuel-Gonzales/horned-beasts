@@ -19,7 +19,7 @@ class Beast extends React.Component {
 
   render(){
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} handleOpenModal={this.description}>
         <Card.Title>Animal: {this.props.title}</Card.Title>
         <Card.Text>Favorites ❤️: {this.state.favorites}</Card.Text>
         <img src={this.props.image_url} alt={this.props.keyword} title={this.props.title} onClick={this.handleClick} ></img>
