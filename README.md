@@ -44,7 +44,7 @@ Number and name of feature: #3 Modal
 
 Estimate of time needed to complete: 1hr
 
-Start time: 10:22
+Start time: 11:22
 
 Finish time: 11:31pm
 
