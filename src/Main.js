@@ -5,12 +5,17 @@ import data from "./data/data.json"
 import "./Main.css"
 
 class Main extends React.Component {
-  render(){
+  render() {
     return (
       <main>
-      {data.map((beast, index) => {
-        return <Beast image_url={beast.image_url} title={beast.title} description={beast.description} keyword={beast.keyword} key={index} handleOpenModal={this.props.handleOpenModal}/>
-      })}
+        {data.map((beast, index) => (
+          <Beast
+            image_url={beast.image_url}
+            title={beast.title}
+            description={beast.description}
+            keyword={beast.keyword} key={index}
+            handleOpenModal={this.props.handleOpenModal} />
+        ))}
       </main>
     )
   }
