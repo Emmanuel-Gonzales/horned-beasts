@@ -17,12 +17,16 @@ class Beast extends React.Component {
     })
   } 
 
+  handleNameClick = () => {
+this.props.handleOpenModal(this.props.title, this.props.image_url, this.props.description)
+  }
+
   render(){
     return (
-      <Card style={{ width: '18rem' }} handleOpenModal={this.description}>
+      <Card style={{ width: '18rem' }}>
         <Card.Title>Animal: {this.props.title}</Card.Title>
-        <Card.Text>Favorites ❤️: {this.state.favorites}</Card.Text>
-        <img src={this.props.image_url} alt={this.props.keyword} title={this.props.title} onClick={this.handleClick} ></img>
+        <Card.Text onClick={this.handleClick}>Favorites ❤️: {this.state.favorites}</Card.Text>
+        <img onClick={this.handleNameClick} src={this.props.image_url} alt={this.props.keyword} title={this.props.title}></img>
         <Card.Text>{this.props.description}</Card.Text>
       </Card>
     )
