@@ -1,7 +1,5 @@
 import React from "react";
 import Beast from "./Beast";
-import data from "./data/data.json"
-// import Header from "./Header";
 import "./Main.css"
 
 class Main extends React.Component {
@@ -14,6 +12,7 @@ class Main extends React.Component {
             title={beast.title}
             description={beast.description}
             keyword={beast.keyword} key={index}
+            horns={beast.horns}
             handleOpenModal={this.props.handleOpenModal} />
         ))}
       </main>

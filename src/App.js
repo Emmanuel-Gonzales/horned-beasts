@@ -42,6 +42,13 @@ handleOpenModal = (name, img, desc) =>{
 handleSelect = (event) => {
   event.preventDefault();
   let selected = event.target.value;
+
+  if(selected === "# of Horns"){
+    let hornedData  = data.sort((a, b) => a.horns - b.horns);
+    this.setState({
+      sortedData: hornedData
+    });
+  } 
 }
 
   render(){
@@ -52,7 +59,6 @@ handleSelect = (event) => {
         <Form.Label>Select Format</Form.Label>
         <Form.Select  name="selected" onChange={this.handleSelect}>
           <option value="">Choose</option>
-          <option value="Standard">Standard</option>
           <option value="# of Horns">Number of Horns</option>
         </Form.Select>
       </Form.Group>
