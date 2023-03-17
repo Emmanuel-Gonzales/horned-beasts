@@ -8,7 +8,7 @@ class Main extends React.Component {
   render() {
     return (
       <main>
-        {data.map((beast, index) => (
+        {this.props.sortedData.map((beast, index) => (
           <Beast
             image_url={beast.image_url}
             title={beast.title}
