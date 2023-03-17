@@ -42,7 +42,6 @@ handleOpenModal = (name, img, desc) =>{
 handleSelect = (event) => {
   event.preventDefault();
   let selected = event.target.value;
-  console.log(selected);
 }
 
   render(){
