@@ -5,8 +5,9 @@ import React from "react";
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import SelectedBeast from "./SelectedBeast";
+import data from "./data/data.json"
+
 
 
 // CLASS
@@ -18,7 +19,8 @@ constructor(props){
     showModal: false,
     selectedBeast: '',
     selectedImg: '',
-    selectedDesc: ''
+    selectedDesc: '',
+    sortedData: data,
   }
 }
 
@@ -41,17 +43,8 @@ handleOpenModal = (name, img, desc) =>{
     return (
       <> 
       <Header />
-      <Main handleOpenModal={this.handleOpenModal} />
-      <Modal show={this.state.showModal} onHide={this.handleCloseModal}>
-      <Modal.Header closeButton>{this.state.selectedBeast}</Modal.Header>
-      <Modal.Body>
-        <img src={this.state.selectedImg} alt={this.state.selectedBeast} width="450"></img>
-        <p>{this.state.selectedDesc}</p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={this.handleCloseModal}>Close</Button>
-      </Modal.Footer>
-      </Modal>
+      <Main data={data} handleOpenModal={this.handleOpenModal} />
+      <SelectedBeast showModal={this.state.showModal} handleCloseModal={this.handleCloseModal} selectedBeast={this.state.selectedBeast} selectedDesc={this.state.selectedDesc} selectedImg={this.state.selectedImg}/>
       <Footer />
       </>
       )
